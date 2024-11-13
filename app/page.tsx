@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 const Home = async () => {
   const { userId } = await auth();
-  if (userId) {
+  if (!userId) {
     redirect("/login");
   }
   return (
